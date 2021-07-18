@@ -1,4 +1,4 @@
-#Automatic Sudoku Solver
+# Automatic Sudoku Solver
 
 What this python code does is that it creates a GUI application in which you have to fill in the entries of the sudoku that are given initially and then it will automatically solve the rest of the sudoku.
 The algorithm that it uses is the backtracking algorithm.It will iterate through the complete grid row by row and column by column and fill the empty boxes with values from 0 to 9, whichever are possible. If any of them gives a sodoku that isn't possible to be solved, then it will go back and fill in the next possible value.
