@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>AR Sudoku Solver</title>
+    <script src="./lib/opencv.js"></script>
+    <script src="./lib/tfjs.js"></script>
+    <script src="./lib/tfjs-backend-wasm.js"></script>
+
+    <style type="text/css">
+      html,
+      body,
+      .wrapper {
+        height: 100%;
+        margin: 0;
+      }
+
+      .wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        align-content: stretch;
+      }
+
+      .video {
+        flex: 1;
+        position: relative;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      .controls {
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      canvas {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .controls input {
+        width: 85%;
+        align-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div id="browser" style="display: none;">
+        This demo relies on modern browser features (JS imports, async, const,
+        etc ...) please use a more modern browser!
+      </div>
+      <div class="video">
+        <canvas id="videoTargetCanvas" style="display: none;"></canvas>
+        <canvas id="tempCanvas" style="display: none;"></canvas>
+      </div>
+      <div class="controls">
+        <input type="range" id="range" min="0" max="6" value="6" />
+      </div>
+    </div>
+    <video id="videoElement" height="0" autoplay="" playsinline=""></video>
+
+    <script type="module">
+      import "./src/index.js";
+    </script>
+
+    <script nomodule type="text/javascript">
+      document.getElementById("browser").style.display = "block";
+    </script>
+  </body>
+</html>
